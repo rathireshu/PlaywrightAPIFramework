@@ -8,9 +8,12 @@ test.only('APIs Testing', async ({request}) => {
  // Validate status code
  expect(getResponse.status()).toBe(200)
 
+
 // Validate response text message
 const statusMsg = getResponse.statusText();
-console.log('status message is :'+statusMsg);
+console.log('status message is :' + statusMsg);
+expect(getResponse.ok()).toBeTruthy();
+
 expect.soft(statusMsg).toBe('OK');
 expect(statusMsg).toContain('OK');
 
